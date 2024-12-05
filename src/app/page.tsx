@@ -44,7 +44,8 @@ function useGoogleSheetValue() {
     fetchSheetValue(true);
 
     // Subsequent periodic refreshes without loading state
-    const intervalId = setInterval(() => fetchSheetValue(), 30000);
+    const interval = process.env.REFRESH_INTERVAL ? parseInt(process.env.REFRESH_INTERVAL) : 30000;
+    const intervalId = setInterval(() => fetchSheetValue(), interval);
 
     // Cleanup interval on component unmount
     return () => clearInterval(intervalId);
@@ -62,7 +63,7 @@ export default function Home() {
   };
 
   const { count, isInitialLoading, error } = useGoogleSheetValue();
-  const donationGoal = 2_000_000;
+  const donationGoal = process.env.DONATION_GOAL ? parseFloat(process.env.DONATION_GOAL) : 0;
 
   // Loading spinner component
   const LoadingSpinner = () => (
