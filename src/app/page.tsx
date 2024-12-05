@@ -3,7 +3,7 @@
 import SlotCounter from 'react-slot-counter';
 import { useState, useEffect } from 'react';
 import { Loader2 } from 'lucide-react';
-import ProgressBar from './ProgressBar'; // Import the new ProgressBar component
+import ProgressBar from '@/app/ProgressBar'; // Import the new ProgressBar component
 import ReactConfetti from 'react-confetti';
 import { brazilianRealToFloat } from '@/app/utils';
 
