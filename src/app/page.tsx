@@ -70,10 +70,6 @@ export default function Home() {
   const donationGoal = process.env.NEXT_PUBLIC_DONATION_GOAL ? parseFloat(process.env.NEXT_PUBLIC_DONATION_GOAL) : 0;
 
   const [showConfetti, setShowConfetti] = useState(false);
-  const [windowDimensions] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
 
   useEffect(() => {
     // Parse the current count as a float and check if it meets or exceeds the goal
@@ -102,7 +98,7 @@ export default function Home() {
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      {showConfetti && <ReactConfetti width={windowDimensions.width} height={windowDimensions.height} />}
+      {showConfetti && <ReactConfetti/>}
       <main className="flex flex-col gap-2 sm:gap-4 md:gap-6 lg:gap-8 row-start-2 items-center">
         <div className="text-1xl sm:text-3xl md:text-5xl lg:text-6xl">Total de promessas:</div>
         
