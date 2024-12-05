@@ -19,3 +19,15 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.percentage-num {
+  margin-top: -2.5rem;
+}
+
+/* change percentage num between 320 and 640 */
+
+@media (min-width: 320px) and (max-width: 640px) {
+  .percentage-num {
+    margin-top: -1.6rem;
+  }
+}

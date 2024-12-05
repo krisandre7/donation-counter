@@ -17,7 +17,7 @@ export async function GET() {
 
     // Replace with your spreadsheet ID and range
     const spreadsheetId = process.env.SPREADSHEET_ID;
-    const range = 'Sheet1!A1';
+    const range = process.env.DONATION_COUNT_RANGE || 'Sheet1!A1';
 
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId,
