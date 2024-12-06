@@ -6,6 +6,7 @@ import { Loader2 } from 'lucide-react';
 import ProgressBar from '@/app/ProgressBar'; // Import the new ProgressBar component
 import ReactConfetti from 'react-confetti';
 import { brazilianRealToFloat } from '@/app/utils';
+import Image from 'next/image'
 
 // Custom hook to fetch and update the sheet value with initial loading state
 function useGoogleSheetValue() {
@@ -97,7 +98,19 @@ export default function Home() {
   );
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)] antialiased bg-white dark:bg-slate-900">
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-20 flex justify-center overflow-hidden">
+        <div className="flex w-[108rem] flex-none justify-end">
+          <picture>
+            <source srcSet="https://tailwindcss.com/_next/static/media/docs@30.8b9a76a2.avif" type="image/avif" />
+            <img src="https://tailwindcss.com/_next/static/media/docs@tinypng.d9e4dcdc.png" alt="" className="w-[71.75rem] max-w-none flex-none dark:hidden" decoding="async" />
+          </picture>
+          <picture>
+            <source srcSet="https://tailwindcss.com/_next/static/media/docs-dark@30.1a9f8cbf.avif" type="image/avif" />
+            <img src="https://tailwindcss.com/_next/static/media/docs-dark@tinypng.1bbe175e.png" alt="" className="hidden w-[90rem] max-w-none flex-none dark:block" decoding="async" />
+          </picture>
+        </div>
+      </div>
       {showConfetti && <ReactConfetti/>}
       <main className="flex flex-col gap-2 sm:gap-4 md:gap-6 lg:gap-8 row-start-2 items-center">
         <div className="text-1xl sm:text-3xl md:text-5xl lg:text-6xl">Total de promessas:</div>
@@ -119,6 +132,14 @@ export default function Home() {
         
         <div className="text-1xl sm:text-3xl md:text-4xl text-center lg:text-6xl">
           Meta: R${formatCurrency(donationGoal)}
+        </div>
+
+        {/* add qr code image */}
+        <div className="mt-8">
+          <div className='text-center font-bold text-1xl sm:text-3xl md:text-4xl text-center lg:text-6xl mb-4'>
+            Chave PIX (E-mail):
+            </div>
+          <Image src="/qr_code.png" alt="QR Code" className='size-56 sm:size-56 big-image' width={200} height={200} />
         </div>
       </main>
     </div>

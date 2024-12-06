@@ -36,7 +36,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ currentValue, goal }) => {
             }}
           />
         </div>
-        <div className="text-center text-xl sm:text-4xl percentage-num font-bold">
+        <div className="text-center text-xl sm:text-4xl percentage-num font-bold text-white">
           {isNaN(percentage) ? '0.00' : percentage.toFixed(2)}%
         </div>
       </div>

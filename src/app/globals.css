@@ -24,6 +24,13 @@ body {
   margin-top: -2.5rem;
 }
 
+@media (min-width: 768px) {
+  .big-image {
+    width: 40rem !important;
+    height: 40rem !important;
+  }
+}
+
 /* change percentage num between 320 and 640 */
 
 @media (min-width: 320px) and (max-width: 640px) {
