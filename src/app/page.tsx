@@ -24,12 +24,13 @@ function useGoogleSheetValue() {
       try {
         const response = await fetch('/api');
         const data = await response.json();
+        console.log(data);
 
         if (response.ok) {
           const formattedValue = new Intl.NumberFormat('pt-BR', {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
-          }).format(data.value);
+          }).format(brazilianRealToFloat(data.value));
           setCount(formattedValue);
         } else {
           throw new Error(data.error || 'Failed to fetch sheet value');
