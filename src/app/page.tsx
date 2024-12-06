@@ -137,9 +137,16 @@ export default function Home() {
         {/* add qr code image */}
         <div className="mt-8">
           <div className='text-center font-bold text-1xl sm:text-3xl md:text-4xl text-center lg:text-6xl mb-4'>
-            Chave PIX (E-mail):
+             QR Code PIX:
             </div>
-          <Image src="/qr_code.png" alt="QR Code" className='size-56 sm:size-56 big-image' width={200} height={200} />
+          <Image src="/pix_qr_code.jpeg" alt="QR Code" className='size-56 sm:size-56 big-image' width={200} height={200} />
+        </div>
+
+        <div className="mt-8">
+          <div className='text-center font-bold text-1xl sm:text-3xl md:text-4xl text-center lg:text-6xl mb-4'>
+             QR Code Formulário:
+            </div>
+          <Image src="/form_qr_code.png" alt="QR Code" className='size-56 sm:size-56 big-image' width={200} height={200} />
         </div>
       </main>
     </div>
