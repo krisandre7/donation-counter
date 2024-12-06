@@ -113,7 +113,7 @@ export default function Home() {
       </div>
       {showConfetti && <ReactConfetti/>}
       <main className="flex flex-col gap-2 sm:gap-4 md:gap-6 lg:gap-8 row-start-2 items-center">
-        <div className="text-1xl sm:text-3xl md:text-5xl lg:text-6xl">Total de promessas:</div>
+        <div className="text-1xl sm:text-3xl md:text-5xl lg:text-6xl mt-28">Total de promessas:</div>
         
         {isInitialLoading ? (
           <LoadingSpinner />
@@ -134,19 +134,18 @@ export default function Home() {
           Meta: R${formatCurrency(donationGoal)}
         </div>
 
-        {/* add qr code image */}
-        <div className="mt-8">
-          <div className='text-center font-bold text-1xl sm:text-3xl md:text-4xl text-center lg:text-6xl mb-4'>
-             QR Code PIX:
-            </div>
-          <Image src="/pix_qr_code.jpeg" alt="QR Code" className='size-56 sm:size-56 big-image' width={200} height={200} />
-        </div>
-
-        <div className="mt-8">
+        <div className="mt-72">
           <div className='text-center font-bold text-1xl sm:text-3xl md:text-4xl text-center lg:text-6xl mb-4'>
              QR Code Formulário:
             </div>
           <Image src="/form_qr_code.png" alt="QR Code" className='size-56 sm:size-56 big-image' width={200} height={200} />
+        </div>
+
+        <div className="mt-72">
+          <div className='text-center font-bold text-1xl sm:text-3xl md:text-4xl text-center lg:text-6xl mb-4'>
+             QR Code PIX:
+            </div>
+          <Image src="/pix_qr_code.jpeg" alt="QR Code" className='size-56 sm:size-56 big-image' width={200} height={200} />
         </div>
       </main>
     </div>
